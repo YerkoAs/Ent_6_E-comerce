@@ -22,6 +22,10 @@ const remove = catchError(async(req, res) => {
 
 const update = catchError(async(req, res) => {
     const { id } = req.params;
+    const items = ['email', 'password', 'phone']
+    items.forEach((item) => {
+        delete req.body[item]
+    })
     const result = await User.update(
         req.body,
         { where: {id}, returning: true }
