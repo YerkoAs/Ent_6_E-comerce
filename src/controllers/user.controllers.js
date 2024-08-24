@@ -32,18 +32,18 @@ const update = catchError(async(req, res) => {
 
 const login = catchError(async(req, res) => {
     const { email, password } = req.body
-    const user = await User.findOne({where:{email}})
+    const user = await User.findOne({where: {email}})
     if (!user) return res.status(401).json({message: 'user not found'})
 
     const valid = await bcrypt.compare(password, user.password)
-    if (!valid) return res.status(401)
+    if (!valid) return res.sendStatus(401)
 
     const token = jwt.sign(
         {user},
         process.env.TOKEN_SECRET,
         {expiresIn: '1d'}
     )
-    return res.json({token, user})
+    return res.json({user, token})
 })
 
 module.exports = {
