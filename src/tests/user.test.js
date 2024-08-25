@@ -19,7 +19,7 @@ beforeAll(async () => {
     .send(user)
 
     TOKEN = res.body.token
-    console.log(TOKEN)
+    //console.log(TOKEN)
 })
 
 const user = {

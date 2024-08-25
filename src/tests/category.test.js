@@ -21,8 +21,10 @@ beforeAll(async () => {
 })
 
 
+
+
 const category = {
-    name: 'phones'
+    name: 'videogames'
 }
 
 test('POST -> BASE_URL, should return statusCode 201, and res.body.name === category.name', async () => {
