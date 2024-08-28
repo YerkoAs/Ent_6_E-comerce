@@ -1,6 +1,7 @@
 const { getAll, create, remove} = require('../controllers/category.controllers');
 const express = require('express');
-const { verifyJwt } = require('../utils/verifyJWT');
+const path = require('path');
+const verifyJwt = require(path.resolve(__dirname, '../utils/verifyJWT'));
 
 
 const routerCategory = express.Router();
