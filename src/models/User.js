@@ -31,6 +31,6 @@ User.beforeCreate(async(user) => {
     const password = user.password
     const hashPassword = await bcrypt.hash(password, 10)
     user.password = hashPassword
-})
+});
 
 module.exports = User;

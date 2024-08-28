@@ -5,7 +5,7 @@ const Purchase = sequelize.define('purchase', {
     //userId
     //productId
     quantity: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
 });
