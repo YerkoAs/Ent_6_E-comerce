@@ -2,6 +2,7 @@ const { getAll, create, getOne, remove, update } = require('../controllers/produ
 const express = require('express');
 const { verifyJwt } = require('../utils/verifyJWT');
 
+
 const routerProduct = express.Router();
 
 routerProduct.route('/')
